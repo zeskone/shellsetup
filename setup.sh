@@ -1,5 +1,14 @@
 #!/bin/zsh
 
+echo "Checking user"
+currentuser=$(id -u)
+if [ $currentuser == 0 ]; then
+    echo "Don't run as root!"
+    exit 1
+else
+    echo "Not root ... continuing ..."
+fi
+
 echo "Installing Fonts..."
 sudo cp -r ./fonts/* /usr/share/fonts/
 echo "Refreshing Font Cache..."
