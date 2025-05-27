@@ -10,7 +10,7 @@ echo ""
 
 echo "Installing Starship"
 #zsh starship_install.sh
-sudo apt update && sudo apt install starship -y
+sudo apt update -qq && sudo apt install starship -y
 echo "Adding Starship to .zshrc"
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 echo "Switching preset to Pastel Powerline"
