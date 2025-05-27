@@ -22,4 +22,8 @@ echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 echo "Switching preset to Pastel Powerline"
 starship preset pastel-powerline -o ~/.config/starship.toml
 echo ""
+
+echo "Adding tmux config..."
+cp .tmux.conf ~/.tmux.conf
+
 echo "Done! Close and reopen the shell!"
