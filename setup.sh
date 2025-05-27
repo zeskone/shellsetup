@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+#This file will install Starship, use the Pastel Powerline theme, and install the fonts needed to display all that properly.
+#It will also install a tmux config file that makes things a little smoother, mouse pane switching, mouse scrolling, changing shortcuts for pane switching, etc.
+
 echo "Checking user"
 if [ $(id -u) = 0 ]; then
     echo "Don't run as root! Quitting ..."
@@ -23,7 +26,7 @@ echo "Switching preset to Pastel Powerline"
 starship preset pastel-powerline -o ~/.config/starship.toml
 echo ""
 
-echo "Adding tmux config..."
+echo "Adding tmux config...\n"
 cp .tmux.conf ~/.tmux.conf
 
 echo "Done! Close and reopen the shell!"
