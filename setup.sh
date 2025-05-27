@@ -1,20 +1,17 @@
 #!/bin/zsh
 
 echo "Checking user"
-currentuser=$(id -u)
-if [ $currentuser == 0 ]; then
-    echo "Don't run as root!"
+if [ $(id -u) = 0 ]; then
+    echo "Don't run as root! Quitting ..."
     exit 1
 else
-    echo "Not root ... continuing ..."
+    echo "Not root ... continuing ...\n"
 fi
 
 echo "Installing Fonts..."
 sudo cp -r ./fonts/* /usr/share/fonts/
 echo "Refreshing Font Cache..."
 fc-cache -f
-#echo "Are the fonts listed?"
-#fc-list | grep -e Caskaydia -e Fira
 echo ""
 
 echo "Installing Starship"
